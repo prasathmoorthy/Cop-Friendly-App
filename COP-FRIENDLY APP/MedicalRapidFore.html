@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<head><title>SUBMIT,UPDATE,DELETE,VIEW</title>
+</head>
+<style>
+    body  
+{  
+    margin: 0;  
+    padding: 0;  
+    background-image: url('https://images.pexels.com/photos/131634/pexels-photo-131634.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');  
+    font-family: 'Arial';  
+    background-size: cover;
+}  
+#heading{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+    </style>
+<body><CENTER>
+    <br><h1 id="heading">MEDICAL RAPIDFORCE🚑</h1><br><br>
+    <table>
+        <tr><td><label for="accident"><b>Type Of Accident:</label></b>
+            <td><select id="namebox" name="acctype"><br><br>
+                <option value=""></option>
+               <option value="Drousy Driving">Drousy Driving</option>
+               <option value="Drunk and Drive">Drunk and Drive</option>
+               <option value="Prohibition of Trafic rules">Prohibition of Trafic rules</option>
+               <option value="Overspeeding">Overspeeding</option>
+               <option value="Brake Failure">Brake Failure</option></td></tr>
+             </select>
+             <tr><td><label><b>Number Of Peoples Affected:-</b>    
+                <td><select id="rollbox" name="No of Affected"><br><br>
+                    <option value=""></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                    <option value="32">32</option>
+                    <option value="33">33</option>
+                    <option value="34">34</option>
+                    <option value="35">35</option>
+                    <option value="36">36</option>
+                    <option value="37">37</option>
+                    <option value="38">38</option>
+                    <option value="39">39</option>
+                    <option value="40">40</option>
+                    <option value="41">41</option>
+                    <option value="42">42</option>
+                    <option value="43">43</option>
+                    <option value="44">44</option>
+                    <option value="45">45</option>
+                    <option value="46">46</option>
+                    <option value="47">47</option>
+                    <option value="48">48</option>
+                    <option value="49">49</option>
+                    <option value="50">50</option></input></td></tr>
+                </select>
+<tr><td><label><b>Vechicle No:-</b>    
+<td><input id="secbox" type="text"></input></td></tr>
+
+<tr><td><label for="date"><b>Date:</label></b>
+<td><input type="date" id="phnbox" name="date"></td></tr>
+
+<tr><td><label for="appt"><b>Select a time:</label></b>
+<td><input type="time" id="genbox" name="appt"></td></tr>
+
+<tr><td><label><b>Total No of injury:-</b>    
+    <td><select id="crmbox" name="total No of Affected"><br><br>
+        <option value=""></option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+        <option value="32">32</option>
+        <option value="33">33</option>
+        <option value="34">34</option>
+        <option value="35">35</option>
+        <option value="36">36</option>
+        <option value="37">37</option>
+        <option value="38">38</option>
+        <option value="39">39</option>
+        <option value="40">40</option>
+        <option value="41">41</option>
+        <option value="42">42</option>
+        <option value="43">43</option>
+        <option value="44">44</option>
+        <option value="45">45</option>
+        <option value="46">46</option>
+        <option value="47">47</option>
+        <option value="48">48</option>
+        <option value="49">49</option>
+        <option value="50">50</option></input></td></tr>
+    </select>
+
+
+    <tr><td><label><b>Dead count:-</b>    
+        <td><select id="vehbox" name="Dead count"><br><br>
+            <option value=""></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+            <option value="32">32</option>
+            <option value="33">33</option>
+            <option value="34">34</option>
+            <option value="35">35</option>
+            <option value="36">36</option>
+            <option value="37">37</option>
+            <option value="38">38</option>
+            <option value="39">39</option>
+            <option value="40">40</option>
+            <option value="41">41</option>
+            <option value="42">42</option>
+            <option value="43">43</option>
+            <option value="44">44</option>
+            <option value="45">45</option>
+            <option value="46">46</option>
+            <option value="47">47</option>
+            <option value="48">48</option>
+            <option value="49">49</option>
+            <option value="50">50</option></input></td></tr>
+        </select>
+
+        <tr><td><label><b>Vechicles Involved:-</b>    
+            <td><input id="datebox" type="text"></input></td></tr>
+
+  <tr><td><label><b>LocationOfAccident:-</b>    
+    <td><input id="addbox" type="text"></input></td></tr>
+
+</table>
+<br>
+<button id="insert"><b>SUBMIT</b></button>
+<button id="delete"><b>DELETE</b></button><br><br>
+<button id="view"><b>VIEW</b></button><br><br><br>
+</CENTER>
+
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
+
+<script id="MainScript">
+    var firebaseConfig = {
+            apiKey: "AIzaSyAtgag66k692mA5nwYaJEVh-88iR6w89VU",
+            authDomain: "cop-friendly2811.firebaseapp.com",
+            databaseURL: "https://cop-friendly2811.firebaseio.com",
+            projectId: "cop-friendly2811",
+            storageBucket: "cop-friendly2811.appspot.com",
+            messagingSenderId: "752283877058",
+            appId: "1:752283877058:web:a534810ef21826d19ac55b"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        var nameV, licenceV, ageV, genV,crmV, dateV,addV, vehV;
+        //var nameV, rollV, secV, genV, phnV;
+
+function Ready(){
+
+    /*nameV = "as";
+    rollV = 12;
+    secV = 21;
+    genV = "M"; */
+
+    nameV = document.getElementById('namebox').value;
+    licenceV = document.getElementById('rollbox').value;
+    ageV = document.getElementById('secbox').value;
+    genV = document.getElementById('genbox').value;
+    phnV = document.getElementById('phnbox').value;
+    crmV = document.getElementById('crmbox').value;
+    dateV=document.getElementById('datebox').value;
+    addV=document.getElementById('addbox').value;
+    vehV=document.getElementById('vehbox').value;
+    
+   
+}
+//insert
+    document.getElementById('insert').onclick=function()
+    {
+        Ready();
+        firebase.database().ref('MEDICAL RAPIDFORCE/'+nameV).set(
+            {
+                TypeOfAccident: nameV,
+                No_of_peoples_Affected: licenceV,
+                VechicleNo: ageV,
+                Time: genV,
+                Date:phnV,
+                TotalNoOfInjury:crmV,
+                Vechicles_involved:dateV,
+                Location_of_Accident:addV,
+                Dead_Count:vehV,
+               
+            }
+        );
+    }
+   /* //  UPDATE
+    document.getElementById('update').onclick=function()
+    {
+        Ready();
+        firebase.database().ref('MEDICAL RAPIDFORCE/'+nameV).update(
+            {
+                TypeOfAccident: nameV,
+                No_of_peoples_Affected:licenceV,
+                VechicleNo: ageV,
+                Time: genV,
+                Date1:phnV,
+                TotalNoOfInjury:crmV,
+                Vechicles_involved:dateV,
+                Location_of_Accident:addV,
+                Dead_Count:vehV,
+
+            }
+        );
+    }
+*/
+    //DELETE
+    document.getElementById('delete').onclick=function()
+    {
+        Ready();
+        firebase.database().ref('MEDICAL RAPIDFORCE/'+nameV).remove();
+    }
+
+
+    document.getElementById('view').onclick=function()
+    {
+        window.location="https://console.firebase.google.com/u/1/project/cop-friendly2811/database/cop-friendly2811/data/~2Fcop";
+    }
+</script>
+<style>
+    #namebox{  
+    width: 310px;  
+    height: 25px;  
+    border: none;  
+    border-radius: 7px;  
+    padding-left: 8px;
+    }
+
+    #rollbox{  
+    width: 310px;  
+    height: 25px;  
+    border: none;  
+    border-radius: 7px;  
+    padding-left: 8px;
+    }
+
+    #secbox{  
+    width: 300px;  
+    height: 25px;  
+    border: none;  
+    border-radius: 7px;  
+    padding-left: 8px;
+    }
+
+    #genbox{  
+    width: 300px;  
+    height: 25px;  
+    border: none;  
+    border-radius: 7px;  
+    padding-left: 8px;
+    }
+
+    #crmbox{  
+    width: 310px;  
+    height: 25px;  
+    border: none;  
+    border-radius: 7px;  
+    padding-left: 8px;
+    }
+
+    #phnbox{  
+    width: 300px;  
+    height: 25px;  
+    border: none;  
+    border-radius: 7px;  
+    padding-left: 8px;
+    }
+
+    #datebox{  
+    width: 300px;  
+    height: 25px;  
+    border: none;  
+    border-radius: 7px;  
+    padding-left: 8px;
+    }
+
+    #timebox{  
+    width: 300px;  
+    height: 25px;  
+    border: none;  
+    border-radius: 7px;  
+    padding-left: 8px;
+    }
+
+    #addbox{
+    width: 300px;  
+    height: 35px;  
+    border: none;  
+    border-radius: 7px;  
+    padding-left: 8px;
+    }
+
+    #vehbox{
+    width: 310px;  
+    height: 25px;  
+    border: none;  
+    border-radius: 7px;  
+    padding-left: 8px;
+    }
+
+    #insert{  
+    width: 150px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 17px;  
+    padding-left: 7px;
+    background-color:rgb(201, 248, 131);
+    font-style: Arial;
+    }
+
+    #update{  
+    width: 150px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 17px;  
+    padding-left: 7px;
+    background-color:rgb(238, 182, 78);
+    font-style: Arial;
+    }
+
+    #delete{  
+    width: 150px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 17px;  
+    padding-left: 7px;
+    background-color:rgb(206, 50, 50);
+    font-style: Arial;
+    }
+    
+    #view{  
+    width: 150px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 17px;  
+    padding-left: 7px;
+    font-style: Arial;
+    }
+
+    #secpage{  
+    width: 200px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 17px;  
+    padding-left: 7px;
+    background-color: rgba(0, 255, 0, 0.781);
+    }
+    
+
+</style>
+
+</body>
+</html>

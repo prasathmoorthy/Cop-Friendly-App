@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<head><title>SUBMIT,UPDATE,DELETE,VIEW</title>
+</head>
+<style>
+    body  
+{  
+    margin: 0;  
+    padding: 0;  
+    background-image: url('https://images.pexels.com/photos/132193/pexels-photo-132193.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'); 
+    background-size: cover; 
+    font-family: 'Arial';  
+}  
+    </style>
+<body><CENTER>
+    <br><h1>TRAFFIC COP APP👮</h1>
+    <table>
+<tr><td><label><b>Name Of Person:-</b>    
+<td><input id="namebox" type="text"></input></td></tr>
+<tr><td><label><b>Licence_No:-</b></td>
+<td><input id="rollbox" type="text"></input></td></tr>
+<tr><td><label><b>Age :-</b></td>       
+<td><input id="secbox" type="text"></input></td></tr>
+<tr><td><label><b>Phone No :-</b></td>
+<td><input id="phnbox" type="text"></input></td></tr>
+<tr><td><label for="gendr"><b>Gender:</label></b>
+ <td><select id="genbox" name="gen"><br>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option></td></tr>
+  </select>
+
+  <tr><td><label for="crime"><b>Crime List:</label></b>
+    <td><select id="crmbox" name="crm"><br><br>
+        <option value=""></option>
+       <option value="OverSpeeding-₹500">OverSpeeding</option>
+       <option value="Drunk and Drive-₹1000">Drunk and Drive</option>
+       <option value="OverLoad Passenger-₹300">Over Loading Passenger</option>
+       <option value="Not Wearing Helmet-₹600">Not Wearing Helmet</option></td></tr>
+     </select>
+
+     <tr><td><label for="vechicle"><b>vechicle type:</label></b>
+        <td><select id="vehbox" name="veh"><br><br>
+            <option value=""></option>
+           <option value="Bike">Bike</option>
+           <option value="Car">Car</option>
+           <option value="Truck">Truck</option>
+           <option value="Auto">Auto</option></td></tr>
+         </select>
+
+     <tr><td><label for="date"><b>Date:</label></b>
+  <td><input type="date" id="datebox" name="date"></td></tr>
+
+  <tr><td><label for="appt"><b>Select a time:</label></b>
+  <td><input type="time" id="timebox" name="appt"></td></tr>    
+
+  <tr><td><label><b>Address:-</b>    
+    <td><input id="addbox" type="text"></input></td></tr>
+
+    <tr><td><label for="fine"><b>Fine Amount</label></b>
+        <td><select id="finebox" name="fine"><br><br>
+            <option value=""></option>
+           <option value="₹100">100</option>
+           <option value="₹200">200</option>
+           <option value="₹300">300</option>
+           <option value="₹400">400</option>
+           <option value="₹500">500</option>
+           <option value="₹1000">1000</option>
+           <option value="₹1500">1500</option>
+           <option value="₹2000">2000</option>
+           <option value="4000">4000</option></td></tr>
+         </select>
+
+         <tr><td><label for="ticket"><b>Fine:</label></b>
+         <td><select id="tikbox" name="tik"><br>
+            <option value="Paid">Paid</option>
+            <option value="NotPaid">NotPaid</option></td></tr>
+          </select>
+         
+</table>
+<br>
+<button id="insert"><b>VIOLATORS SUBMIT</b></button>
+<button onclick="window.print()" id="print"><b>PRINT FINE </b></button>
+<button id="delete"><b>DELETE</b></button><br><br>
+<button id="view"><b>VIEW</b></button>
+<button id="pay"><b>PAYMENT</b></button><br><br>
+<a href="D:/PROJECT/JS/SecondPage.html"><button id="secpage"><b>Click Here to MedicalRapidpage ►</b></button></a>
+</CENTER>
+
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
+
+<script id="MainScript">
+    var firebaseConfig = {
+            apiKey: "AIzaSyAtgag66k692mA5nwYaJEVh-88iR6w89VU",
+            authDomain: "cop-friendly2811.firebaseapp.com",
+            databaseURL: "https://cop-friendly2811.firebaseio.com",
+            projectId: "cop-friendly2811",
+            storageBucket: "cop-friendly2811.appspot.com",
+            messagingSenderId: "752283877058",
+            appId: "1:752283877058:web:a534810ef21826d19ac55b"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        var nameV, licenceV, ageV, genV,crmV, dateV, timeV,addV, vehV,fineV,tikV;
+        //var nameV, rollV, secV, genV, phnV;
+
+function Ready(){
+
+    /*nameV = "as";
+    rollV = 12;
+    secV = 21;
+    genV = "M"; */
+
+    nameV = document.getElementById('namebox').value;
+    licenceV = document.getElementById('rollbox').value;
+    ageV = document.getElementById('secbox').value;
+    genV = document.getElementById('genbox').value;
+    phnV = document.getElementById('phnbox').value;
+    crmV = document.getElementById('crmbox').value;
+    dateV=document.getElementById('datebox').value;
+    timeV=document.getElementById('timebox').value;
+    addV=document.getElementById('addbox').value;
+    vehV=document.getElementById('vehbox').value;
+    fineV=document.getElementById('finebox').value;
+    tikV=document.getElementById('tikbox').value;
+    
+   
+}
+//insert
+    document.getElementById('insert').onclick=function()
+    {
+        Ready();
+        firebase.database().ref('cop/'+licenceV).set(
+            {
+                Name_Of_Person: nameV,
+                Licence_No: licenceV,
+                Age: ageV,
+                Gender: genV,
+                Phone_No:phnV,
+                Crime:crmV,
+                Date:dateV,
+                Time:timeV,
+                Home_Address:addV,
+                Vechicle:vehV,
+                FineAmount:fineV,
+                FinePaid:tikV,
+               
+            }
+        );
+    }
+    //DELETE
+    document.getElementById('delete').onclick=function()
+    {
+        Ready();
+        firebase.database().ref('cop/'+licenceV).remove();
+    }
+
+
+    document.getElementById('view').onclick=function()
+    {
+        window.location="https://console.firebase.google.com/u/1/project/cop-friendly2811/database/cop-friendly2811/data/~2Fcop";
+    }
+</script>
+<style>
+    #namebox{  
+    width: 300px;  
+    height: 25px;  
+    border: none;  
+    border-radius: 7px;  
+    padding-left: 8px;
+    }
+
+    #rollbox{  
+    width: 300px;  
+    height: 25px;  
+    border: none;  
+    border-radius: 7px;  
+    padding-left: 8px;
+    }
+
+    #secbox{  
+    width: 300px;  
+    height: 25px;  
+    border: none;  
+    border-radius: 7px;  
+    padding-left: 8px;
+    }
+
+    #genbox{  
+    width: 310px;  
+    height: 25px;  
+    border: none;  
+    border-radius: 7px;  
+    padding-left: 8px;
+    }
+
+    #crmbox{  
+    width: 310px;  
+    height: 25px;  
+    border: none;  
+    border-radius: 7px;  
+    padding-left: 8px;
+    }
+
+    #phnbox{  
+    width: 300px;  
+    height: 25px;  
+    border: none;  
+    border-radius: 7px;  
+    padding-left: 8px;
+    }
+
+    #datebox{  
+    width: 300px;  
+    height: 25px;  
+    border: none;  
+    border-radius: 7px;  
+    padding-left: 8px;
+    }
+
+    #timebox{  
+    width: 300px;  
+    height: 25px;  
+    border: none;  
+    border-radius: 7px;  
+    padding-left: 8px;
+    }
+
+    #addbox{
+    width: 300px;  
+    height: 35px;  
+    border: none;  
+    border-radius: 7px;  
+    padding-left: 8px;
+    }
+
+    #vehbox{
+    width: 310px;  
+    height: 25px;  
+    border: none;  
+    border-radius: 7px;  
+    padding-left: 8px;
+    }
+
+    #finebox{
+    width: 310px;  
+    height: 25px;  
+    border: none;  
+    border-radius: 7px;  
+    padding-left: 8px;
+    }
+
+    #tikbox{
+    width: 310px;  
+    height: 25px;  
+    border: none;  
+    border-radius: 7px;  
+    padding-left: 8px;
+    }
+
+    #insert{  
+    width: 150px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 5px;  
+    padding-left: 7px;
+    background-color:rgb(201, 248, 131);
+    font-style: Arial;
+    }
+
+    #print{  
+    width: 150px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 5px;  
+    padding-left: 7px;
+    background-color:rgb(238, 182, 78);
+    font-style: Arial;
+    }
+
+    #delete{  
+    width: 150px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 5px;  
+    padding-left: 7px;
+    background-color:rgb(206, 50, 50);
+    font-style: Arial;
+    }
+    
+    #view{  
+    width: 150px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 5px;  
+    padding-left: 7px;
+    font-style: Arial;
+    }
+
+#pay{
+    width: 150px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 5px;  
+    padding-left: 7px;
+    background-color:rgb(215, 238, 10);
+    font-style: Arial;
+    }
+
+    #secpage{  
+    width: 200px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 5px;  
+    padding-left: 7px;
+    background-color: rgba(0, 255, 0, 0.781);
+    }
+    
+
+</style>
+
+</body>
+</html>
